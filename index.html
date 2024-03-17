@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedido</title>
+    <style>
+      table {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      td, th {
+        padding: 5px;
+        text-align: center;
+      }
+
+      td {}
+
+      tr{
+        border: 1px solid black;
+      }
+
+      thead{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <h1>Novo pedido</h1>
+      </thead>
+      <tbody>
+        <tr>
+            <td>Cliente:</td>
+            <td><input type="text" name="" id="cliente"> - </td>
+            <td><input type="number" name="" id="codigo"></td>
+        </tr>
+        <tr>
+            <th>Modelo do Produto</th>
+        </tr>
+        <tr>
+            <th>Produto</th>
+            <th>Tipo</th>
+            <th>Tecido</th>
+            <th>Gola</th>
+            <th>Manga</th>
+        </tr>
+        <tr>
+            <td>
+                <select name="" id="produto">
+                    <option value="Camisa">Camisa</option>
+                    <option value="Painel">Painel</option>
+                </select>
+            </td>
+            <td>
+                <select name="" id="tipo">
+                    <option value="Tradicional">Tradicional</option>
+                    <option value="Regata">Regata</option>
+                    <option value="Manga longa">Manga longa</option>
+                    <option value="Machão">Machão</option>
+                </select>
+            </td>
+            <td>
+                <select name="" id="tecido">
+                    <option value="Cacharel">Cacharel</option>
+                    <option value="Dry">Dry</option>
+                    <option value="Dry sport">Dry sport</option>
+                    <option value="UV">UV</option>
+                </select>
+            </td>
+            <td>
+                <select name="" id="gola">
+                    <option value="Redonda">Redonda</option>
+                    <option value="V">V</option>
+                </select>
+            </td>
+            <td>
+                <select name="" id="manga">
+                    <option value="Bainha">Bainha</option>
+                    <option value="Ribana">Ribana</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Tamanhos</th>
+            <th>Total: <span>0</span></th>
+        </tr>
+        <tr>
+            <th>Masculino</th>
+            <th>Feminino</th>
+            <th>Infantil</th>
+        </tr>
+        <tr>
+            <td>PP: <input type="number" name="" id="" style="width: 50px;"></td>
+            <td>PP: <input type="number" name="" id="" style="width: 50px;"></td>
+            <td>PP: <input type="number" name="" id="" style="width: 50px;"></td>
+        </tr>
+        <tr>
+            <td>P: <input type="number" name="" id="" style="width: 50px;"></td>
+            <td>P: <input type="number" name="" id="" style="width: 50px;"></td>
+            <td>P: <input type="number" name="" id="" style="width: 50px;"></td>
+        </tr>
+        <tr>
+            <td>M: <input type="number" name="" id="" style="width: 50px;"></td>
+            <td>M: <input type="number" name="" id="" style="width: 50px;"></td>
+            <td>M: <input type="number" name="" id="" style="width: 50px;"></td>
+        </tr>
+        <tr>
+            <td>G: <input type="number" name="" id="" style="width: 50px;"></td>
+            <td>G: <input type="number" name="" id="" style="width: 50px;"></td>
+            <td>G: <input type="number" name="" id="" style="width: 50px;"></td>
+        </tr>
+        <tr>
+            <td>GG: <input type="number" name="" id="" style="width: 50px;"></td>
+            <td>GG: <input type="number" name="" id="" style="width: 50px;"></td>
+            <td>GG: <input type="number" name="" id="" style="width: 50px;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="button" value="Enviar" onclick="enviar()">
+    <script src="script.js"></script>
+  </body>
+</html>
