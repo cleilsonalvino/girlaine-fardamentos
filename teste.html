@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Data de Entrega</title>
+</head>
+<body>
+<h2>Calculadora de Data de Entrega</h2>
+
+<label for="diasEntrega">Quantos dias para entregar o pedido?</label>
+<input type="number" id="diasEntrega" min="1" required>
+<button onclick="calcularDataEntrega()">Calcular</button>
+
+<div id="resultado"></div>
+
+<script>
+function calcularDataEntrega() {
+  // Obter o número de dias para entrega fornecido pelo usuário
+  const diasParaEntrega = parseInt(document.getElementById("diasEntrega").value, 10);
+
+  // Obter a data atual
+  const dataAtual = new Date();
+
+  // Calcular a data de entrega
+  const dataEntrega = new Date(dataAtual);
+  dataEntrega.setDate(dataEntrega.getDate() + diasParaEntrega);
+
+  // Formatar as datas para exibição
+  const formatoData = { year: 'numeric', month: 'numeric', day: 'numeric' };
+  const dataEmissaoFormatada = dataAtual.toLocaleDateString('pt-BR', formatoData);
+  const dataEntregaFormatada = dataEntrega.toLocaleDateString('pt-BR', formatoData);
+
+  // Exibir o resultado para o usuário
+  const resultadoHTML = `
+    <p>Data de emissão do pedido: ${dataEmissaoFormatada}</p>
+    <p>Data de entrega estimada: ${dataEntregaFormatada}</p>
+  `;
+  document.getElementById("resultado").innerHTML = resultadoHTML;
+}
+</script>
+
+</body>
+</html>

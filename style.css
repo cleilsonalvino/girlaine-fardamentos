@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+
+table {
+    border-collapse: collapse;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+  td, th {
+    text-align: center;
+    padding: 5px;
+  }
+
+  tr{
+    border: 1px solid black;
+  }
+  
+  thead {
+    padding: 10px;
+  }
+
