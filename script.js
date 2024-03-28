@@ -35,14 +35,15 @@ valores.forEach(function(elemento) {
 });
 
 async function enviar() {
-    // Coletar outros dados do formulário
+
     const produto = document.getElementById("produto").value;
     const tipo = document.getElementById("tipo").value;
     const tecido = document.getElementById("tecido").value;
     const gola = document.getElementById("gola").value;
     const manga = document.getElementById("manga").value;
     const cliente = String(document.getElementById("cliente").value);
-    const diasParaEntrega = parseInt(document.getElementById("diasEntrega").value);
+    const codigo = Number(document.getElementById("codigo").value);
+    const diasParaEntrega = parseInt(document.getElementById("diasEntrega").value)
 
     // Função para calcular datas de início e entrega
     function calcularDatasEntrega(prazoDias) {
@@ -64,7 +65,7 @@ async function enviar() {
     const dataInicio = datasEntrega.dataInicio;
     const dataEntrega = datasEntrega.dataEntrega;
 
-    // Criar objeto com os dados do pedido, incluindo o próximo código de pedido
+    // Criar objeto com os dados do pedido, incluindo o valor total atualizado
     var objeto = {
         Produto: produto,
         Tipo: tipo,
@@ -72,12 +73,13 @@ async function enviar() {
         Gola: gola,
         Manga: manga,
         Cliente: cliente,
+        Codigo: codigo,
         Data_entrada: dataInicio,
         Data_saida: dataEntrega,
         Quantidade: valorTotalAtual,
     };
 
-    // Fazer a requisição para enviar o objeto para a planilha
+    // Faz a requisição para enviar o objeto para a planilha
     try {
         const response = await fetch("https://sheetdb.io/api/v1/6lcrabngw0txr", {
             method: "POST",
@@ -87,7 +89,7 @@ async function enviar() {
             body: JSON.stringify(objeto),
         });
 
-        // Verificar se a requisição foi bem-sucedida
+        // Verifica se a requisição foi bem-sucedida
         if (response.ok) {
             console.log("Objeto enviado com sucesso para a planilha.");
             // Faça o que desejar após o envio bem-sucedido
@@ -100,4 +102,33 @@ async function enviar() {
     } catch (error) {
         console.error("Erro ao enviar objeto para a planilha:", error);
     }
+
+
+     // Obter o último código de pedido adicionado à planilha
+     let ultimoCodigo = 0;
+     try {
+         const response = await fetch("https://sheetdb.io/api/v1/6lcrabngw0txr");
+         const data = await response.json();
+         if (data && data.length > 0) {
+             ultimoCodigo = data[data.length - 1].Codigo;
+         }
+     } catch (error) {
+         console.error("Erro ao obter o último código de pedido:", error);
+     }
+ 
+     // Incrementar o último código para obter o próximo código
+     const proximoCodigo = ultimoCodigo + 1;
+ 
+     // Restante do seu código para coletar outros dados do formulário e enviar para o SheetDB
+     // ...
+ 
+     // Criar objeto com os dados do pedido, incluindo o próximo código de pedido
+     var objeto = {
+         // Outros campos do pedido...
+         Codigo: proximoCodigo,
+         // ...
+     };
+ 
+     // Fazer a requisição para enviar o objeto para a planilha
+     // ...
 }
