@@ -102,33 +102,4 @@ async function enviar() {
     } catch (error) {
         console.error("Erro ao enviar objeto para a planilha:", error);
     }
-
-
-     // Obter o último código de pedido adicionado à planilha
-     let ultimoCodigo = 0;
-     try {
-         const response = await fetch("https://sheetdb.io/api/v1/6lcrabngw0txr");
-         const data = await response.json();
-         if (data && data.length > 0) {
-             ultimoCodigo = data[data.length - 1].Codigo;
-         }
-     } catch (error) {
-         console.error("Erro ao obter o último código de pedido:", error);
-     }
- 
-     // Incrementar o último código para obter o próximo código
-     const proximoCodigo = ultimoCodigo + 1;
- 
-     // Restante do seu código para coletar outros dados do formulário e enviar para o SheetDB
-     // ...
- 
-     // Criar objeto com os dados do pedido, incluindo o próximo código de pedido
-     var objeto = {
-         // Outros campos do pedido...
-         Codigo: proximoCodigo,
-         // ...
-     };
- 
-     // Fazer a requisição para enviar o objeto para a planilha
-     // ...
 }
