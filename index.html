@@ -5,104 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pedido</title>
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="style/buttons.css">
   </head>
   <body>
-    <h1>Novo pedido</h1>
-    <table>
-      <thead>
-        <tr>
-          <td>Cliente:</td>
-          <td><input type="text" name="cliente" id="cliente"></td>
-          <td>Dias para entrega: <span><input type="number" name="" id="diasEntrega"></span></td>
-         
-      </tr>
-      </thead>
-      <tbody>
-            <tr>
-                <th>Modelo do Produto</th>
-            
-            </tr>
-            <tr>
-                <th>Produto</th>
-                <th>Tipo</th>
-                <th>Tecido</th>
-                <th>Gola</th>
-                <th>Manga</th>
-            </tr>
-            <tr>
-                <td>
-                    <select name="" id="produto">
-                        <option value="Camisa">Camisa</option>
-                        <option value="Painel">Painel</option>
-                    </select>
-                </td>
-                <td>
-                    <select name="" id="tipo">
-                        <option value="Tradicional">Tradicional</option>
-                        <option value="Regata">Regata</option>
-                        <option value="Manga longa">Manga longa</option>
-                        <option value="Machão">Machão</option>
-                    </select>
-                </td>
-                <td>
-                    <select name="" id="tecido">
-                        <option value="Cacharel">Cacharel</option>
-                        <option value="Dry">Dry</option>
-                        <option value="Dry sport">Dry sport</option>
-                        <option value="UV">UV</option>
-                    </select>
-                </td>
-                <td>
-                    <select name="" id="gola">
-                        <option value="Redonda">Redonda</option>
-                        <option value="V">V</option>
-                    </select>
-                </td>
-                <td>
-                    <select name="" id="manga">
-                        <option value="Bainha">Bainha</option>
-                        <option value="Ribana">Ribana</option>
-                    </select>
-                </td>
-            </tr>
+<h1>Novo pedido</h1>
+<div class="content">
+
+    <div class="logo">
+        <img src="./img/logo.jpg" alt="logo girlane fardamentos" width="70px">
+        <h2>Girlane fardamentos</h2>
+    </div>
+
+    <div class="cliente">
+        <h3>Cliente:</h3>
+        <input type="text" name="cliente" id="cliente">
+        <h3>Dias para entrega:</h3> <span><input type="number" name="" id="diasEntrega"></span>
+    </div>
+    
+    <div class="modeloProduto">
+        Modelo do Produto
+    </div>    
+        <div class="itens">
+            <h4>produto</h4>
+            <h4>Tipo</h4>
+            <h4>Tecido</h4>
+            <h4>Gola</h4>
+            <h4>Manga</h4>
         </div>
-        <tr>
-            <th>Tamanhos</th>
-            <th>Total: <span id="total" value="0">0</span></th>
-        </tr>
-        <tr>
-            <th>Masculino</th>
-            <th>Feminino</th>
-            <th>Infantil</th>
-        </tr>
-        <tr>
-            <td>PP1: <input type="number" name="tm1" id="tm1"></td>
-            <td>PP2: <input type="number" name="tm2" id="tm2"></td>
-            <td>2: <input type="number" name="" id="tm3"></td>
-        </tr>
-        <tr>
-            <td>P: <input type="number" name="" id="tm4"></td>
-            <td>P: <input type="number" name="" id="tm5"></td>
-            <td>4: <input type="number" name="" id="tm6"></td>
-        </tr>
-        <tr>
-            <td>M: <input type="number" name="" id="tm7"></td>
-            <td>M: <input type="number" name="" id="tm8"></td>
-            <td>6: <input type="number" name="" id="tm9"></td>
-        </tr>
-        <tr>
-            <td>G: <input type="number" name="" id="tm10"></td>
-            <td>G: <input type="number" name="" id="tm11"></td>
-            <td>8: <input type="number" name="" id="tm12"></td>
-        </tr>
-        <tr>
-            <td>GG: <input type="number" name="" id="tm13"></td>
-            <td>GG: <input type="number" name="" id="tm14"></td>
-        </tr>
-      </tbody>
-    </table>
-    <input type="button" value="Enviar" onclick="enviar()">
-    <input type="button" value="puxar dados" onclick="puxardados()">
-    <script src="./script/script.js"></script>
-  </body>
+    
+    
+    <div class="seletores">
+        <select name="" id="produto">
+        <option value="Camisa">Camisa</option>
+        <option value="Painel">Painel</option>
+        </select>
+        
+        <select name="" id="tipo">
+        <option value="Tradicional">Tradicional</option>
+        <option value="Regata">Regata</option>
+        <option value="Manga longa">Manga longa</option>
+        <option value="Machão">Machão</option>
+        </select>
+        
+        <select name="" id="tecido">
+        <option value="Cacharel">Cacharel</option>
+        <option value="Dry">Dry</option>
+        <option value="Dry sport">Dry sport</option>
+        <option value="UV">UV</option>
+        </select>
+        
+        <select name="" id="gola">
+        <option value="Redonda">Redonda</option>
+        <option value="V">V</option>
+        </select>
+        
+        <select name="" id="manga">
+        <option value="Bainha">Bainha</option>
+        <option value="Ribana">Ribana</option>
+        </select>
+    </div>
+
+    <div class="total">
+        <h5>Total:</h5><span id="total" value="0">0</span>
+    </div>
+    
+    <div class="tamanhos">
+        <h3>Tamanhos</h3>
+    </div>
+    
+    
+    <div class="quantidades">
+        <div class="masculino">
+            <h2>Masculino</h2>
+            <div class="inputs"><p>P:</p> <input type="number" name="" id="tm4"></div>
+            <div class="inputs"><p>M:</p> <input type="number" name="" id="tm7"></div>
+            <div class="inputs"><p>G:</p> <input type="number" name="" id="tm10"></div>
+            <div class="inputs"><p>GG:</p> <input type="number" name="" id="tm13"></div>
+        </div>
+        <div class="feminino">
+            <h2>Feminino</h2>
+            <div class="inputs"><p>PP:</p> <input type="number" name="tm2" id="tm2"></div>
+            <div class="inputs"><p>P:</p> <input type="number" name="" id="tm5"></div>
+            <div class="inputs"><p>M:</p> <input type="number" name="" id="tm8"></div>
+            <div class="inputs"><p>G:</p> <input type="number" name="" id="tm11"></div>
+            <div class="inputs"><p>GG:</p> <input type="number" name="" id="tm14"></div>
+        </div>
+        <div class="infantil">
+            <h2>Infantil</h2>
+            <div class="inputs"><p>2:</p> <input type="number" name="" id="tm3"></div>
+            <div class="inputs"><p>4:</p> <input type="number" name="" id="tm6"></div>
+            <div class="inputs"><p>6:</p> <input type="number" name="" id="tm9"></div>
+            <div class="inputs"><p>8:</p> <input type="number" name="" id="tm12"></div>
+        </div> 
+    </div>
+    
+    
+    <button class="btn" type="button" onclick="enviar()">
+        <strong>Enviar</strong>
+        <div id="container-stars">
+          <div id="stars"></div>
+        </div>
+      
+        <div id="glow">
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </button>
+</div>
+<script src="./script/script.js"></script>
+</body>
 </html>
