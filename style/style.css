@@ -1,10 +1,18 @@
 @charset "UTF-8";
 
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100vw;
+    height: 100vh;
 }
 
 table {
@@ -27,3 +35,11 @@ table {
     padding: 10px;
   }
 
+tbody{
+  background-color: aquamarine;
+}
+
+tbody > #content{
+  background-color: blue;
+  color: brown;
+}

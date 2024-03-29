@@ -42,7 +42,6 @@ async function enviar() {
     const gola = document.getElementById("gola").value;
     const manga = document.getElementById("manga").value;
     const cliente = String(document.getElementById("cliente").value);
-    const codigo = Number(document.getElementById("codigo").value);
     const diasParaEntrega = parseInt(document.getElementById("diasEntrega").value)
 
     // Função para calcular datas de início e entrega
@@ -65,6 +64,8 @@ async function enviar() {
     const dataInicio = datasEntrega.dataInicio;
     const dataEntrega = datasEntrega.dataEntrega;
 
+    const proximoNumero = await obterProximoNumero();
+
     // Criar objeto com os dados do pedido, incluindo o valor total atualizado
     var objeto = {
         Produto: produto,
@@ -73,10 +74,10 @@ async function enviar() {
         Gola: gola,
         Manga: manga,
         Cliente: cliente,
-        Codigo: codigo,
         Data_entrada: dataInicio,
         Data_saida: dataEntrega,
         Quantidade: valorTotalAtual,
+        Codigo: proximoNumero
     };
 
     // Faz a requisição para enviar o objeto para a planilha
@@ -102,4 +103,35 @@ async function enviar() {
     } catch (error) {
         console.error("Erro ao enviar objeto para a planilha:", error);
     }
+
+    
 }
+
+async function obterProximoNumero() {
+    try {
+        const response = await fetch('https://sheetdb.io/api/v1/6lcrabngw0txr');
+        const data = await response.json();
+
+        // Verifica se há algum dado na planilha
+        if (data.length === 0) {
+            // Se não houver dados, retorna 1 como o próximo número disponível
+            return 1;
+        } else {
+            // Encontrar o maior número atual
+            let maiorNumero = 0;
+            data.forEach(pedido => {
+                const numero = parseInt(pedido.Codigo);
+                if (!isNaN(numero) && numero > maiorNumero) {
+                    maiorNumero = numero;
+                }
+            });
+
+            // Incrementar o maior número encontrado em 1
+            return maiorNumero + 1;
+        }
+    } catch (error) {
+        console.error('Erro ao obter próximo número:', error);
+        return 1; // Se ocorrer algum erro, começar do número 1
+    }
+}
+
