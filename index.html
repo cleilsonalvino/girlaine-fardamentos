@@ -16,54 +16,78 @@
         <h2>Girlane fardamentos</h2>
     </div>
 
-    <div class="cliente">
-        <h3>Cliente:</h3>
+    <div class="clientes">
+        <label for="">Cliente:</label>
         <input type="text" name="cliente" id="cliente">
-        <h3>Dias para entrega:</h3> <span><input type="number" name="" id="diasEntrega"></span>
+        <label for="diasEntrega">Dias para entrega:</label>
+        <input type="number" name="" id="diasEntrega">
+        <label for="valorUnitario">Valor da unidade:</label>
+        <input type="number" name="" id="valorUnitario">
+
     </div>
     
     <div class="modeloProduto">
         Modelo do Produto
     </div>    
-        <div class="itens">
-            <h4>produto</h4>
-            <h4>Tipo</h4>
-            <h4>Tecido</h4>
-            <h4>Gola</h4>
-            <h4>Manga</h4>
-        </div>
-    
-    
-    <div class="seletores">
-        <select name="" id="produto">
-        <option value="Camisa">Camisa</option>
-        <option value="Painel">Painel</option>
-        </select>
-        
-        <select name="" id="tipo">
-        <option value="Tradicional">Tradicional</option>
-        <option value="Regata">Regata</option>
-        <option value="Manga longa">Manga longa</option>
-        <option value="Machão">Machão</option>
-        </select>
-        
-        <select name="" id="tecido">
-        <option value="Cacharel">Cacharel</option>
-        <option value="Dry">Dry</option>
-        <option value="Dry sport">Dry sport</option>
-        <option value="UV">UV</option>
-        </select>
-        
-        <select name="" id="gola">
-        <option value="Redonda">Redonda</option>
-        <option value="V">V</option>
-        </select>
-        
-        <select name="" id="manga">
-        <option value="Bainha">Bainha</option>
-        <option value="Ribana">Ribana</option>
-        </select>
-    </div>
+        <table>
+            <tr>
+                <td>
+                    <h4>produto</h4>
+                </td>
+                <td>
+                    <h4>Tipo</h4>
+                </td>
+                <td>
+                    <h4>Tecido</h4>
+                </td>
+                <td>
+                    <h4>Gola</h4>
+                </td>
+                <td>
+                    <h4>Manga</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="" id="produto" class="tds">
+                    <option value="Camisa">Camisa</option>
+                    <option value="Painel">Painel</option>
+                    </select>
+                </td>
+                
+                <td>
+                    <select name="" id="tipo">
+                    <option value="Tradicional">Tradicional</option>
+                    <option value="Regata">Regata</option>
+                    <option value="Manga longa">Manga longa</option>
+                    <option value="Machão">Machão</option>
+                    </select>
+                </td>
+                
+                <td>
+                    <select name="" id="tecido">
+                    <option value="Cacharel">Cacharel</option>
+                    <option value="Dry">Dry</option>
+                    <option value="Dry sport">Dry sport</option>
+                    <option value="UV">UV</option>
+                    </select>
+                </td>
+                
+                <td>
+                    <select name="" id="gola">
+                    <option value="Redonda">Redonda</option>
+                    <option value="V">V</option>
+                    </select>
+                </td>
+                
+                <td>
+                    <select name="" id="manga">
+                    <option value="Bainha">Bainha</option>
+                    <option value="Ribana">Ribana</option>
+                    </select>
+                </td>
+            </tr>
+    </table>
 
     <div class="total">
         <h5>Total:</h5><span id="total" value="0">0</span>
@@ -84,7 +108,7 @@
         </div>
         <div class="feminino">
             <h2>Feminino</h2>
-            <div class="inputs"><p>PP:</p> <input type="number" name="tm2" id="tm2"></div>
+            <div class="inputs"><p>PP:</p> <input type="number" name="" id="tm2"></div>
             <div class="inputs"><p>P:</p> <input type="number" name="" id="tm5"></div>
             <div class="inputs"><p>M:</p> <input type="number" name="" id="tm8"></div>
             <div class="inputs"><p>G:</p> <input type="number" name="" id="tm11"></div>
