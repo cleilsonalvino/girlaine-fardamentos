@@ -1,4 +1,6 @@
 const valorTotalElement = document.getElementById("total");
+const totalPagar = document.getElementById("totalPagar");
+
 
 document.addEventListener("DOMContentLoaded", function () {
   var valores = [];
@@ -20,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       // Atualizar o elemento "total" com o novo total
       valorTotalElement.textContent = total;
+      totalPagar.textContent = valorTotalElement * 25
     });
   });
 });

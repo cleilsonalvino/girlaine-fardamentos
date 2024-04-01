@@ -103,8 +103,8 @@ select {
   align-items: center;
 }
 
-.total > span {
-  padding: 5px;
+.total > h2 {
+  padding-left: 15px;
 }
 
 .quantidades {
